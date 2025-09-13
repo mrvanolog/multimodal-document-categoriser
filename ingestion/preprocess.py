@@ -4,11 +4,11 @@ import io
 from hashlib import sha256
 from pathlib import Path
 
-from .types import ImageMeta, PdfMeta
-
 from PIL import Image
 from pypdf import PdfReader
 from pypdf.errors import PdfReadError
+
+from .types import ImageMeta, PdfMeta
 
 
 def compute_sha256(data: bytes) -> str:
