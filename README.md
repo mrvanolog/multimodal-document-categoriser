@@ -23,3 +23,26 @@ for f in files:
 	for b in f.blocks:
 		print(b["type"])  # text | image_url | file
 ```
+
+## Analysis module
+
+DocAnalyser wraps classification and extraction using OpenAI-compatible models via OpenRouter. It consumes ingestion blocks and returns structured results.
+
+Example:
+
+```python
+from pathlib import Path
+from ingestion.loader import ingest
+from analysis.analyser import DocAnalyser
+
+docs = ingest([Path("data/")])
+analyser = DocAnalyser()
+
+for d in docs:
+    print(d.path.name)
+    res = analyser.analyse(d)
+    print(f"Category: {res.category.value}, Confidence: {res.confidence}")
+    print(f"Fields: {res.fields}")
+    print(f"Raw text: {res.raw_text}")
+    print("-" * 30)
+```
