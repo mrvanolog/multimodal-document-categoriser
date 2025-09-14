@@ -3,10 +3,10 @@
 Contains DocAnalyser and supporting types, schemas, and prompts.
 """
 
-from .types import Category, ClassificationResult, ExtractionResult
+from .types import DocCategory, ClassificationResult, ExtractionResult
 
 __all__ = [
-    "Category",
+    "DocCategory",
     "ClassificationResult",
     "ExtractionResult",
 ]
