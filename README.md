@@ -1,6 +1,6 @@
-# multimodal-document-categoriser
+# Multimodal Document Categoriser
 
-This repository contains a small project to build a multimodal document categorizer and extractor using LLMs.
+This repository contains a small project to build a multimodal document categoriser and extractor using LLMs.
 
 ## Streamlit Web App
 
@@ -32,7 +32,9 @@ The project includes a Streamlit web interface for easy interaction.
 
 This will launch the web application in your browser. You can then upload documents for analysis.
 
-## Ingestion module
+## Components
+
+### Ingestion module
 
 The ingestion package normalizes supported files (images, PDFs), collects lightweight metadata, and prepares OpenAI-style content blocks for downstream LLM calls.
 
@@ -40,7 +42,7 @@ Supported inputs:
 - Images: PNG, JPG, JPEG, WEBP, BMP, TIF, TIFF (converted to optimized JPEG for prompting)
 - PDFs: attached as data URIs for models that can parse PDFs
 
-Quick start:
+Example:
 
 ```python
 from pathlib import Path
@@ -54,7 +56,7 @@ for f in files:
 		print(b["type"])  # text | image_url | file
 ```
 
-## Analysis module
+### Analysis module
 
 DocAnalyser wraps classification and extraction using OpenAI-compatible models via OpenRouter. It consumes ingestion blocks and returns structured results.
 
