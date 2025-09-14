@@ -5,7 +5,7 @@ from enum import Enum
 from typing import Dict, Optional
 
 
-class Category(str, Enum):
+class DocCategory(str, Enum):
     INVOICE = "invoice"
     MARKETPLACE_LISTING_SCREENSHOT = "marketplace_listing_screenshot"
     CHAT_SCREENSHOT = "chat_screenshot"
@@ -15,7 +15,7 @@ class Category(str, Enum):
 
 @dataclass
 class ClassificationResult:
-    category: Category
+    category: DocCategory
     confidence: float
 
 
@@ -27,7 +27,7 @@ class ExtractionResult:
 
 @dataclass
 class AnalysisResult:
-    category: Category
+    category: DocCategory
     confidence: float
     fields: Dict[str, object]
     raw_text: Optional[str] = None
