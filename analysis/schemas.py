@@ -16,7 +16,7 @@ FIELDS = {
                 "type": "object",
                 "properties": {
                     "description": {"type": "string"},
-                    "quantity": {"type": "integer"},
+                    "quantity": {"type": "number"},
                     "unit_price": {"type": "number"},
                     "total_price": {"type": "number"},
                 },
