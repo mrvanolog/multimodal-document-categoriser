@@ -7,7 +7,7 @@ from typing import Dict, List, Optional
 from openai import OpenAI
 import requests
 
-from ingestion.types import IngestedFile
+from src.ingestion.types import IngestedFile
 
 from .prompts import CLASSIFY_INSTRUCTION, EXTRACTION_INSTRUCTIONS_CATEGORY
 from .schemas import classification_schema, extraction_schema_for
