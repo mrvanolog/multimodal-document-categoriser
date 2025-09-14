@@ -32,6 +32,8 @@ The project includes a Streamlit web interface for easy interaction.
 
 This will launch the web application in your browser. You can then upload documents for analysis.
 
+**Note:** The `data/` directory contains a set of example documents (`.pdf`, `.png`, `.jpeg`) that you can use to test the application.
+
 ## Components
 
 ### Ingestion module
