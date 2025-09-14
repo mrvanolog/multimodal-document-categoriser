@@ -1,0 +1,132 @@
+{
+  "chat_screenshot.png": {
+    "category": "chat_screenshot",
+    "confidence": 1.0,
+    "fields": {
+      "participants": [
+        "Olina",
+        "Slava"
+      ],
+      "timestamp": "April 28",
+      "messages": [
+        {
+          "sender": "Slava",
+          "text": "Hey, I'm reaching you about the part time job with www.accio.com I guess I need to share the code PEINBL06",
+          "time": "11:48"
+        },
+        {
+          "sender": "Olina",
+          "text": "Hello, my name is Olina. I'm glad to hear from you. What's your name?",
+          "time": "11:51"
+        },
+        {
+          "sender": "Slava",
+          "text": "Slava",
+          "time": "11:52"
+        },
+        {
+          "sender": "Olina",
+          "text": "First, I should tell you that this isn't a formal hiring opportunity, but rather my side job. I received an offer from the company to invite new people to receive commissions, so I contacted you. What I'm presenting to you is a part-time online job I'm doing. If you're interested, I'll present this job to you in writing via Telegram.",
+          "time": "11:53"
+        },
+        {
+          "sender": "Slava",
+          "text": "Sure, I\u2019m interested",
+          "time": "11:54"
+        },
+        {
+          "sender": "Slava",
+          "text": "Thank you",
+          "time": "11:54"
+        },
+        {
+          "sender": "Olina",
+          "text": "OK, then I'll send you a job profile to read.",
+          "time": "11:54"
+        },
+        {
+          "sender": "Olina",
+          "text": "Company Name: ACCIO.com Position: Product Data Optimizer Responsibilities: - Generate product data. - Optimize product sales ranking. Job Description: Help retailers optimize product sales and upload data to increase product exposure, presence and sales, and get better ranking in the app store. Working Hours: 10:00am to 9:00pm UK time, 1-2 hours per day. Time and location are up to you.",
+          "time": "11:54"
+        },
+        {
+          "sender": "Slava",
+          "text": "What skills do I need to do this job?",
+          "time": "11:55"
+        },
+        {
+          "sender": "Olina",
+          "text": "All you need is to be able to operate a mobile phone, and I will teach you how to do the work.",
+          "time": "11:56"
+        },
+        {
+          "sender": "Slava",
+          "text": "Sounds great. How can I provide the results of my work? And what be the compensation for it? Renata mentioned some training.",
+          "time": "11:58"
+        },
+        {
+          "sender": "Olina",
+          "text": "If you successfully complete two sets of data optimization every day, you can sign in on the working day and receive a basic salary. Work for 7 consecutive days and receive a basic salary of $500. Work for 15 consecutive days and receive a basic salary of $1,500. Work for 30 consecutive days and receive a basic salary of $2,000. You can receive a basic salary three times a month, with a total monthly basic salary of 4,000 USDT. Our remuneration is a base salary + commission. The commission is based on your workload. The principle is simple: the more you do, the more you earn. Here is our job description and salary. Please take a look at this first. If you have any questions, please feel free to ask me.",
+          "time": "11:59"
+        },
+        {
+          "sender": "Slava",
+          "text": "All is clear",
+          "time": "12:01"
+        }
+      ]
+    },
+    "raw_text": "+44 73 7761 8918 \u2b50\ufe0f\nlast seen recently\nApril 28\nHey, I'm reaching you about the part time job with www.accio.com I guess I need to share the code PEINBL06 11:48\nHello, my name is Olina. I'm glad to hear from you. What's your name? 11:51\nSlava 11:52\nFirst, I should tell you that this isn't a formal hiring opportunity, but rather my side job. I received an offer from the company to invite new people to receive commissions, so I contacted you. What I'm presenting to you is a part-time online job I'm doing. If you're interested, I'll present this job to you in writing via Telegram. 11:53\nSure, I\u2019m interested 11:54\nThank you 11:54\nOK, then I'll send you a job profile to read. 11:54\nCompany Name: ACCIO.com Position: Product Data Optimizer Responsibilities: - Generate product data. - Optimize product sales ranking. Job Description: Help retailers optimize product sales and upload data to increase product exposure, presence and sales, and get better ranking in the app store. Working Hours: 10:00am to 9:00pm UK time, 1-2 hours per day. Time and location are up to you. 11:54\nWhat skills do I need to do this job? 11:55\nAll you need is to be able to operate a mobile phone, and I will teach you how to do the work. 11:56\nSounds great. How can I provide the results of my work? And what be the compensation for it? Renata mentioned some training. 11:58\nIf you successfully complete two sets of data optimization every day, you can sign in on the working day and receive a basic salary. Work for 7 consecutive days and receive a basic salary of $500. Work for 15 consecutive days and receive a basic salary of $1,500. Work for 30 consecutive days and receive a basic salary of $2,000. You can receive a basic salary three times a month, with a total monthly basic salary of 4,000 USDT. Our remuneration is a base salary + commission. The commission is based on your workload. The principle is simple: the more you do, the more you earn. Here is our job description and salary. Please take a look at this first. If you have any questions, please feel free to ask me. 11:59\nAll is clear 12:01"
+  },
+  "invoice.pdf": {
+    "category": "invoice",
+    "confidence": 1.0,
+    "fields": {
+      "invoice_number": "FA2022-0001",
+      "invoice_date": "05/09/2022",
+      "total": 181.5,
+      "items": [
+        {
+          "description": "comanage business pakket",
+          "quantity": 1,
+          "unit_price": 150.0,
+          "total_price": 181.5
+        }
+      ],
+      "vendor": "BV CRE8",
+      "address": "Diestersteenweg 462\n3680 Maaseik\nBelgium"
+    },
+    "raw_text": "BV CRE8\nDiestersteenweg 462\n3680 Maaseik\nBelgium\nVAT BE0631922138\nInvoice\nBV CRE8\nDiestersteenweg 462\n3680 Maaseik\nBelgium\ninvoice number FA2022-0001\ninvoice date 05/09/2022\ndue date 05/10/2022\nyour VAT number BE0631922138\nComanage business user\ndescription quantity price VAT total (incl VAT)\ncomanage business pakket 1 piece 150,00 31,50 (21%) 181,50\ntaxable amount 150,00\n+ VAT (21%) + 31,50\ntotal \u20ac 181,50\n1 / 1"
+  },
+  "market_place_listing.png": {
+    "category": "marketplace_listing_screenshot",
+    "confidence": 0.95,
+    "fields": {
+      "title": "2004 Porsche 911",
+      "price": 25000,
+      "currency": "\u00a3",
+      "location": "Guildford",
+      "item_characteristics": [
+        "Driven 103,400 km",
+        "Manual transmission",
+        "Exterior colour: Black",
+        "Interior colour: -",
+        "Fuel type: Petrol",
+        "Engine size: -1.0 L"
+      ],
+      "item_description": "GT3 wide body, adjustable suspension, and performance exhaust.",
+      "seller_name": "Ming Luk"
+    },
+    "raw_text": "2004 Porsche 911\n\u00a325,000\nListed a week ago in Guildford\nAbout this vehicle\nDriven 103,400 km\nManual transmission\nExterior colour: Black \u00b7 Interior colour: \nFuel type: Petrol\nEngine size: -1.0 L\nSeller's description\nGT3 wide body, adjustable suspension, and performance exhaust.\nGuildford\nLocation is approximate\nSeller information\nMing Luk\nJoined Facebook in 2010\nSponsored"
+  },
+  "website_screenshot.jpeg": {
+    "category": "website_screenshot",
+    "confidence": 0.95,
+    "fields": {
+      "url": "https://dexscreener.com",
+      "title": "Dex Screener",
+      "website_type": "financial"
+    },
+    "raw_text": "Get the App! Explore PEHEM/SOL Date Range 13:35:22 (UTC-4) Txn USD Price MAKR Range Volume auto Top Traders Holders (127) 15m 1h Chart Txns Chart+Txns Info 1s 1m 5m 15m 1h 4h D"
+  }
+}
