@@ -4,7 +4,7 @@ from typing import Dict
 
 from .types import DocCategory
 
-# TODO: expand fields based on real-world data
+
 FIELDS = {
     DocCategory.INVOICE: {
         "invoice_number": {"type": ["string", "null"]},
