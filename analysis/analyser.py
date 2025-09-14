@@ -35,9 +35,15 @@ class DocAnalyser:
             api_key=api_key or os.getenv("OPENROUTER_API_KEY"),
         )
 
-    def _chat_json(self, blocks: List[dict], schema: Dict) -> Dict:
+    def _chat_json(self, blocks: List[dict], schema: Dict, prefer_native_openai: bool = False) -> Dict:
+        # For PDFs, some OpenRouter Azure instances don't support file content
+        # Force native OpenAI routing for better PDF support
+        model = self.model
+        if prefer_native_openai and any(block.get("type") == "file" for block in blocks):
+            model = "openai/gpt-4o"  # Ensure we hit native OpenAI, not Azure
+
         r = self.client.chat.completions.create(
-            model=self.model,
+            model=model,
             messages=[{"role": "user", "content": blocks}],
             response_format={
                 "type": "json_schema",
@@ -61,7 +67,7 @@ class DocAnalyser:
             ClassificationResult: The result of the classification.
         """
         blocks = self._prepend_instruction(CLASSIFY_INSTRUCTION, doc.blocks)
-        js = self._chat_json(blocks, classification_schema())
+        js = self._chat_json(blocks, classification_schema(), prefer_native_openai=True)
         try:
             category = DocCategory(js.get("category"))  # type: ignore[arg-type]
         except ValueError:
@@ -87,7 +93,7 @@ class DocAnalyser:
             EXTRACTION_INSTRUCTIONS_CATEGORY[category],
             doc.blocks,
         )
-        js = self._chat_json(blocks, schema)
+        js = self._chat_json(blocks, schema, prefer_native_openai=True)
         fields = js.get("fields", {}) if isinstance(js, dict) else {}
         raw_text = js.get("raw_text") if isinstance(fields, dict) else None
 
