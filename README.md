@@ -63,7 +63,7 @@ This will launch the web application in your browser. You can then upload docume
 The ingestion package normalizes supported files (images, PDFs), collects lightweight metadata, and prepares OpenAI-style content blocks for downstream LLM calls.
 
 Supported inputs:
-- Images: PNG, JPG, JPEG, WEBP, BMP, TIF, TIFF (converted to optimized JPEG for prompting)
+- Images: PNG, JPG, JPEG (converted to optimized JPEG for prompting)
 - PDFs: attached as data URIs for models that can parse PDFs
 
 Example:
