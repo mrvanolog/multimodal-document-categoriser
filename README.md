@@ -2,6 +2,36 @@
 
 This repository contains a small project to build a multimodal document categorizer and extractor using LLMs.
 
+## Streamlit Web App
+
+The project includes a Streamlit web interface for easy interaction.
+
+### Running the App
+
+1.  **Install dependencies:**
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+2.  **Set API Key:**
+
+    The application requires an OpenRouter API key. You can either set it as an environment variable:
+
+    ```bash
+    export OPENROUTER_API_KEY="your-key-here"
+    ```
+
+    Or you can enter it directly in the application when prompted.
+
+3.  **Run the app:**
+
+    ```bash
+    streamlit run app.py
+    ```
+
+This will launch the web application in your browser. You can then upload documents for analysis.
+
 ## Ingestion module
 
 The ingestion package normalizes supported files (images, PDFs), collects lightweight metadata, and prepares OpenAI-style content blocks for downstream LLM calls.
@@ -14,7 +44,7 @@ Quick start:
 
 ```python
 from pathlib import Path
-from ingestion.loader import ingest
+from src.ingestion.loader import ingest
 
 files = ingest([Path("data/")])
 for f in files:
@@ -32,17 +62,16 @@ Example:
 
 ```python
 from pathlib import Path
-from ingestion.loader import ingest
-from analysis.analyser import DocAnalyser
+from src.ingestion.loader import ingest
+from src.analysis.analyser import DocAnalyser
 
 docs = ingest([Path("data/")])
 analyser = DocAnalyser()
 
+results = {}
 for d in docs:
     print(d.path.name)
     res = analyser.analyse(d)
     print(f"Category: {res.category.value}, Confidence: {res.confidence}")
-    print(f"Fields: {res.fields}")
-    print(f"Raw text: {res.raw_text}")
-    print("-" * 30)
+    results[d.path.name] = res
 ```
