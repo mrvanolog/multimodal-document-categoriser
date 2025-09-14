@@ -9,9 +9,9 @@ import requests
 
 from ingestion.types import IngestedFile
 
-from .prompts import CLASSIFY_INSTRUCTION, extraction_instruction
+from .prompts import CLASSIFY_INSTRUCTION, EXTRACTION_INSTRUCTIONS_CATEGORY
 from .schemas import classification_schema, extraction_schema_for
-from .types import AnalysisResult, Category, ClassificationResult, ExtractionResult
+from .types import AnalysisResult, DocCategory, ClassificationResult, ExtractionResult
 
 
 class DocAnalyser:
@@ -63,15 +63,15 @@ class DocAnalyser:
         blocks = self._prepend_instruction(CLASSIFY_INSTRUCTION, doc.blocks)
         js = self._chat_json(blocks, classification_schema())
         try:
-            category = Category(js.get("category"))  # type: ignore[arg-type]
+            category = DocCategory(js.get("category"))  # type: ignore[arg-type]
         except ValueError:
-            category = Category.OTHER
+            category = DocCategory.OTHER
         conf = float(js.get("confidence", 0.0))
 
         return ClassificationResult(category=category, confidence=conf)
 
     def extract(
-        self, doc: IngestedFile, category: Category
+        self, doc: IngestedFile, category: DocCategory
     ) -> ExtractionResult:
         """Extract structured information from the document.
 
@@ -84,7 +84,7 @@ class DocAnalyser:
         """
         schema = extraction_schema_for(category)
         blocks = self._prepend_instruction(
-            extraction_instruction(category),
+            EXTRACTION_INSTRUCTIONS_CATEGORY[category],
             doc.blocks,
         )
         js = self._chat_json(blocks, schema)
