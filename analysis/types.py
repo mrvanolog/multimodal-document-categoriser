@@ -31,3 +31,12 @@ class AnalysisResult:
     confidence: float
     fields: Dict[str, object]
     raw_text: Optional[str] = None
+
+    def to_dict(self) -> Dict[str, object]:
+        """Convert AnalysisResult to a dictionary for JSON serialization."""
+        return {
+            "category": self.category.value,
+            "confidence": self.confidence,
+            "fields": self.fields,
+            "raw_text": self.raw_text,
+        }
