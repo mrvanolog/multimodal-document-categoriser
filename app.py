@@ -1,5 +1,6 @@
-from pathlib import Path
 import json
+import os
+from pathlib import Path
 
 import streamlit as st
 
@@ -14,9 +15,30 @@ Upload your documents (images or PDFs) to automatically classify them and extrac
 This tool uses AI to understand the content of your files.
 """)
 
+# --- API Key Handling ---
+if 'api_key' not in st.session_state:
+    st.session_state.api_key = os.getenv("OPENROUTER_API_KEY")
+
+if not st.session_state.api_key:
+    st.warning("🔑 OpenRouter API key not found.")
+    api_key_input = st.text_input(
+        "Please enter your OpenRouter API key to proceed:",
+        type="password",
+        help="You can get your key from https://openrouter.ai/keys"
+    )
+    if api_key_input:
+        st.session_state.api_key = api_key_input
+        st.rerun()
+
+# --- Main App Logic (only if API key is present) ---
+if not st.session_state.get('api_key'):
+    st.info("Please provide an API key to use the application.")
+    st.stop()
+
+
 if "analyser" not in st.session_state:
     with st.spinner("Initializing Analyser..."):
-        st.session_state.analyser = DocAnalyser()
+        st.session_state.analyser = DocAnalyser(api_key=st.session_state.api_key)
 
 if "results" not in st.session_state:
     st.session_state.results = {}
