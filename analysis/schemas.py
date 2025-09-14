@@ -29,7 +29,8 @@ FIELDS = {
     },
     DocCategory.MARKETPLACE_LISTING_SCREENSHOT: {
         "title": {"type": ["string", "null"]},
-        "price": {"type": ["string", "null"]},
+        "price": {"type": ["number", "null"]},
+        "currency": {"type": ["string", "null"]},
         "location": {"type": ["string", "null"]},
         "item_characteristics": {
             "type": ["array", "null"],
