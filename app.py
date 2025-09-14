@@ -1,11 +1,25 @@
+import atexit
 import json
 import os
+import shutil
 from pathlib import Path
 
 import streamlit as st
 
 from src.analysis.analyser import DocAnalyser
 from src.ingestion.loader import ingest
+
+# --- Cleanup Function ---
+TEMP_DIR = Path("temp_uploads")
+
+def cleanup():
+    """Remove the temporary directory on script exit."""
+    if TEMP_DIR.exists():
+        shutil.rmtree(TEMP_DIR)
+        print(f"Cleaned up temporary directory: {TEMP_DIR}")
+
+atexit.register(cleanup)
+
 
 st.set_page_config(page_title="Document Analyser", layout="wide")
 
@@ -50,11 +64,10 @@ uploaded_files = st.file_uploader(
 )
 
 if uploaded_files:
-    temp_dir = Path("temp_uploads")
-    temp_dir.mkdir(exist_ok=True)
+    TEMP_DIR.mkdir(exist_ok=True)
 
     for uploaded_file in uploaded_files:
-        file_path = temp_dir / uploaded_file.name
+        file_path = TEMP_DIR / uploaded_file.name
         if file_path.name not in st.session_state.results:
             with open(file_path, "wb") as f:
                 f.write(uploaded_file.getbuffer())
