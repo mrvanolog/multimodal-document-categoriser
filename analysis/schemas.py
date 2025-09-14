@@ -9,7 +9,7 @@ FIELDS = {
     DocCategory.INVOICE: {
         "invoice_number": {"type": ["string", "null"]},
         "invoice_date": {"type": ["string", "null"]},
-        "total": {"type": ["float", "null"]},
+        "total": {"type": ["number", "null"]},
         "items": {
             "type": ["array", "null"],
             "items": {
